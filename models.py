@@ -1,6 +1,6 @@
 from browser import document
 from browser.widgets.dialog import InfoDialog
-from db_connection import get_database as db
+from db_connection import get_database as database
 
 def checkpass(n,p):
     if not p:
@@ -12,7 +12,7 @@ def checkpass(n,p):
 
 #ela ta recebendo n de email, p de senha e d da tabela users 
 def verify(n,p,d):
-    db = db
+    db = database
     users = db[d]
     for user in users:
         email = user['email']

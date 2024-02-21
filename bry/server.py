@@ -1,7 +1,7 @@
-from browser import document
+from browser import document, window
 from browser.widgets.dialog import InfoDialog
-from models import checkpass, verify
-from db_connection import get_database as db
+from bry.models import checkpass, verify
+from bry.db_connection import get_database as db
 
 def click(ev):
     email = document['email'].value
@@ -14,6 +14,6 @@ def click(ev):
 
         if verify(email, password, "users"):
             InfoDialog("Alert", f"Login executado com sucesso, {email}!!")
+            window.location.assign("/pages/home.html")
 
 document['bt_'].bind("click", click)
-

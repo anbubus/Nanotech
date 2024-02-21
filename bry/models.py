@@ -1,6 +1,6 @@
-from browser import document
+from browser import document, window
 from browser.widgets.dialog import InfoDialog
-from db_connection import get_database as database
+from bry.db_connection import get_database as database
 
 def checkpass(n,p):
     if not p:
@@ -20,3 +20,7 @@ def verify(n,p,d):
         if n == email and p == password:
 
             return True
+
+def onClick(ev):
+    window.locatoin.assign("https://www.w3schools.com")
+    return True
